@@ -1,6 +1,6 @@
 {
   "name": "@tangle-network/agent-client",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "description": "Client SDK for calling Tangle agent gateway endpoints. Supports x402, MPP, and API key authentication with streaming SSE responses.",
   "exports": {

@@ -323,7 +323,8 @@ describe('errors', () => {
   it('throws AgentClientError with status on non-2xx chat', async () => {
     state.chatStatus = 500
     state.chatErrorBody = { error: { message: 'internal' } }
-    const client = new AgentClient(baseUrl)
+    // Disable retries so this test runs fast + tests the error surface
+    const client = new AgentClient(baseUrl, { retry: { maxRetries: 0 } })
     const err = await client
       .chat('test-agent', [{ role: 'user', content: 'hi' }], { apiKey: 'ak_1' })
       .catch((e: unknown) => e)
