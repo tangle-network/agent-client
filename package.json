@@ -1,6 +1,6 @@
 {
   "name": "@tangle-network/agent-client",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "Client SDK for calling Tangle agent gateway endpoints. Supports x402, MPP, and API key authentication with streaming SSE responses.",
   "exports": {
@@ -9,14 +9,24 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "tsup",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
+    "@hono/node-server": "^1.19.14",
     "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^4.1.4",
+    "hono": "^4.12.14",
     "tsup": "^8.0.0",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.4"
   }
 }
